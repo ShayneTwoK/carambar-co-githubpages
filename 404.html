@@ -2,6 +2,15 @@
   <meta charset="utf-8">
   <title>CarambarCoGithubpages</title>
   <base href="C:/Program Files/Git/carambar-co-githubpages/">
+  <script>
+    (function() {
+      var urlParams = new URLSearchParams(window.location.search);
+      var redirectPath = urlParams.get('redirect');
+      if (redirectPath) {
+        history.replaceState(null, '', redirectPath);
+      }
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="stylesheet" href="styles-5INURTSO.css"><style ng-app-id="ng">[_nghost-ng-c245922056] {
@@ -176,4 +185,6 @@
 <script src="polyfills-6EAL64PA.js" type="module"></script><script src="main-BP6RGCC6.js" type="module"></script>
 
 
-<script id="ng-state" type="application/json">{"__nghData__":[{"t":{"27":"t0"},"c":{"27":[{"i":"t0","r":1,"x":5}],"38":[]}}]}</script></body></html><!-- ng build --configuration production --base-href "/carambar-co-githubpages/" -->
+
+
+<script id="ng-state" type="application/json">{"__nghData__":[{"t":{"27":"t0"},"c":{"27":[{"i":"t0","r":1,"x":5}],"38":[]}}]}</script></body></html><!-- ng build --configuration production --base-href "/carambar-co-githubpages/" --><!-- npx angular-cli-ghpages --dir=dist/carambar-co-githubpages/browser -->
