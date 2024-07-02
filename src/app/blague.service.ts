@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class BlagueService {
   private apiUrl = 'https://carambarco.onrender.com/api/v1';
+  // private apiUrl = 'http://localhost:3000/api/v1';
 
   constructor(private http: HttpClient) { }
 
