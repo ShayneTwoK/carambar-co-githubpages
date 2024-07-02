@@ -13,15 +13,16 @@
 
   <h1 class="fw-light">On commence par une petite blague ?</h1>
 
-  <p class="mt-4">
-    <button class="btn btn-primary" type="button">Blague</button>
-  </p>
+  <div class="mt-4">
 
-  <div class="card card-body container">
-    <p class="fs-4 fw-bold">C'est quoi blabla qui enfaite et le blabla ?</p>
-    <p>La blague lol</p>
+    <button (click)="fetchRandomBlague()" class="btn btn-primary" type="button">Blague</button>
+
+    <div *ngIf="oneRandomBlague" class="card card-body container mt-4">
+      <p class="fs-4 fw-bold">{{ oneRandomBlague.question }}</p>
+      <p>{{ oneRandomBlague.answer }}</p>
+    </div>
+
   </div>
-
 </div>
 
 <!-- Consulter une Blague avec son id -->
@@ -31,20 +32,20 @@
 
     <h1>Consulter une blague ?</h1>
 
-    <form class="row g-3">
+    <form (ngSubmit)="fetchOneBlague()" class="row g-3">
 
       <div class="col-auto">
-        <label for="inputPassword2" class="visually-hidden">Password</label>
-        <input type="number" class="form-control" id="idBlague" placeholder="1">
+        <label for="myBlagueInput" class="visually-hidden">id de la Blague</label>
+        <input type="number" class="form-control" id="myBlagueInput" [(ngModel)]="idBlagueInput" name="idBlagueInput" placeholder="1">
       </div>
 
       <div class="col-auto">
-        <button type="submit" class="btn btn-primary mb-3">Voir</button>
+          <button type="submit" class="btn btn-primary mb-3">Envoyer</button>
       </div>
 
-      <div class="card card-body">
-        <p class="fs-4 fw-bold">C'est quoi blabla qui enfaite et le blabla ?</p>
-        <p>La blague lol</p>
+      <div *ngIf="oneBlague" class="card card-body">
+        <p class="fs-4 fw-bold">{{ oneBlague.question }}</p>
+        <p>{{ oneBlague.answer }}</p>
       </div>
 
     </form>
@@ -67,11 +68,14 @@
       </thead>
       <tbody>
 
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-        </tr>
+
+          <tr *ngFor="let blague of blagues; index as i; first as isFirst">
+            <th scope="row">{{ blague.id }}</th>
+            <td>{{ blague.question }}</td>
+            <td>{{ blague.answer }}</td>
+          </tr>
+        
+        
 
       </tbody>
     </table>

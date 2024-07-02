@@ -18,7 +18,7 @@ export class BlagueService {
     return this.http.get<any[]>(`${this.apiUrl}/blagues`);
   }
 
-  getBlague(id: BigInteger): Observable<any> {
+  getBlague(id: number): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/blagues/${id}`);
   }
 
