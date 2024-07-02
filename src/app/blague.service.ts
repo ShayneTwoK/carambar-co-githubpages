@@ -10,9 +10,9 @@ export class BlagueService {
 
   constructor(private http: HttpClient) { }
 
-  createBlague(user: any): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/addBlague`, user);
-  }
+  // createBlague(blague: any): Observable<any> {
+  //   return this.http.post<any>(`${this.apiUrl}/addBlague`, blague);
+  // }
 
   getAllBlague(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/blagues`);
